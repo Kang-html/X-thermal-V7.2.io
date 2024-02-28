@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe to Unlock</title>
+  <style>
+    body {
+      background: linear-gradient(45deg, #00FFFF, #FF00FF);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .section {
+      text-align: center;
+      padding: 20px;
+      background-color: yellow;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #FF5733; /* warna yang menarik */
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease; /* efek transisi */
+    }
+
+    .btn:hover {
+      background-color: #FF8C00; /* warna yang lebih cerah saat hover */
+    }
+
+    .countdown {
+      font-size: 24px;
+      color: black; /* Mengubah warna menjadi hitam */
+      margin-top: 10px;
+    }
+
+    .loading-spinner {
+      border: 8px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top: 8px solid #fff;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(180deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .photo {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Halaman Pertama -->
+  <section id="subscribe" class="section">
+    <h2 style="color: green;">Selamat datang di Komunitas Resmi Kutu Moba</h2> <!-- Mengubah warna utama menjadi hijau -->
+    <p>Untuk kemudahan mendownload file silahkan kunjungi dan subscribe Channel Youtube Kutu Moba</p>
+    <div id="loadingSpinner" class="loading-spinner" style="display: none;"></div>
+    <a href="#" id="subscribeBtn" class="btn">Subscribe Now</a> <!-- Mengubah tombol menjadi warna yang menarik -->
+    <div id="countdown" class="countdown"></div> <!-- Elemen untuk menampilkan waktu mundur -->
+    <img src="https://raw.githubusercontent.com/Kang-html/Download_Magisj/main/IMG_20240223_194116_784.jpg" alt="Foto Anda" class="photo" width="200"> <!-- Tambahkan link foto di sini -->
+  </section>
+
+  <!-- Halaman Kedua -->
+  <section id="download" class="section" style="display: none;">
+    <h2 style="color: green;">Download</h2> <!-- Mengubah warna utama menjadi hijau -->
+    <p>Terima kasih telah mengunjungi saluran YouTube saya dan nantikan konten kami selanjutnya. Klik tombol di bawah untuk mengunduh file.</p>
+    <a href="https://sfl.gl/LmAicPXd" id="downloadBtn" class="btn">LANJUTKAN</a>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("subscribeBtn").addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("loadingSpinner").style.display = "inline-block";
+        setTimeout(function() {
+          window.open("https://youtube.com/@KutuMoba?sub_confirmation=1", "_blank");
+          document.getElementById("loadingSpinner").style.display = "none";
+          document.getElementById("subscribe").style.display = "none";
+          document.getElementById("download").style.display = "block";
+        }, 3000); // Menunggu 3 detik sebelum membuka link YouTube
+      });
+    });
+  </script>
+</body>
+</html>
